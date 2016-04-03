@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>JavaScript Reactions</title>
+    <style>
+      body {
+        margin: 0;
+
+        overflow-x: hidden;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        color: black;
+        font-family: helvetica;
+        font-weight: lighter;
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      div img {
+        background-color: white;
+        margin: 0 10px;
+        border-radius: 150px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="Reaction">Reactions</h1>
+    <div id="images">
+      <img src="like.png" alt="like" onmouseover="loadReaction('568dff','like!')" onmouseleave="loadBg()"></img>
+      <img src="love.png" alt="love" onmouseover="loadReaction('f65066','love!')" onmouseleave="loadBg()"></img>
+      <img src="haha.png" alt="haha" onmouseover="loadReaction('f88017','haha!')" onmouseleave="loadBg()"></img>
+      <img src="gasp.png" alt="gasp" onmouseover="loadReaction('00ffff','wow!')" onmouseleave="loadBg()"></img>
+      <img src="sad.png" alt="sad" onmouseover="loadReaction('736f6e','sad!')" onmouseleave="loadBg()"></img>
+      <img src="angry.png" alt="angry" onmouseover="loadReaction('ff0000','angry!')" onmouseleave="loadBg()"></img>
+    </div>
+
+    <script>
+      function loadReaction(hexColor,feeling) {
+        document.body.style.backgroundColor = hexColor;
+        document.getElementById('Reaction').innerHTML = feeling;
+        document.getElementById('Reaction').style.color = 'ffffff'
+      }
+
+      function loadBg() {
+        document.body.style.backgroundColor = 'ffffff';
+        document.getElementById('Reaction').innerHTML = "Reactions";
+        document.getElementById('Reaction').style.color = '000000'
+      }
+    </script>
+  </body>
+</html>
